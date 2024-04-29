@@ -142,8 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
-    'http://example.com',
-    'https://subdomain.example.com',
+    "http://localhost:8000",  # изменить на адрес фронта (домен)
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -151,13 +150,15 @@ AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
-
 }
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",  # изменить на адрес фронта (домен)
+]

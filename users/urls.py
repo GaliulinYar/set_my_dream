@@ -19,4 +19,5 @@ urlpatterns = [
     # паттерны для авторизации
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # получение токена
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),  # сброс токена на другой
+
 ] + router.urls
