@@ -37,7 +37,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls', namespace='users')),
     path('dream/', include('dream.urls', namespace='dream')),
-    # path('wallet/', include('wallet.urls', namespace='wallet'))
+    path('wallet/', include('wallet.urls', namespace='wallet')),
 
     # страницы swagger документация
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
