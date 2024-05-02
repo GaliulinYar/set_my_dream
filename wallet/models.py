@@ -18,7 +18,7 @@ class Transaction(models.Model):
     description = models.CharField(max_length=255, verbose_name='назначение')
 
     def __str__(self):
-        return f"Трансакция пользователя {self.wallet.user}, {self.timestamp}, {self.amount}"
+        return f"Трансакция пользователя {self.wallet.user}, {self.timestamp.strftime('%m-%d-%Y, %H:%M')}, {self.amount}"
 
 
 class CoinPurchase(models.Model):
@@ -28,4 +28,3 @@ class CoinPurchase(models.Model):
 
     def __str__(self):
         return f"{self.wallet.user}, {self.timestamp}, {self.amount}"
-
