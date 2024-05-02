@@ -30,3 +30,12 @@ class UserDocSerializer(serializers.ModelSerializer):
         # показываем нужные поля Юзера
         model = User
         fields = ['email', 'first_name']
+
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+    """Сериализатор для обновления данных пользователя в ЛК кабинете юзера"""
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'gender', 'avatar')  # Поля для сериализатора
+
