@@ -8,7 +8,7 @@ class DreamCategorySerializer(serializers.ModelSerializer):
     class Meta:
 
         model = DreamCategory
-        fields = ['title', 'description', 'image']
+        fields = ['id', 'title', 'description', 'image']
 
 
 class DreamSerializer(serializers.ModelSerializer):
@@ -17,4 +17,4 @@ class DreamSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = Dream
-        fields = ['title', 'dream_category', 'dream_image', 'cost', 'status']
+        fields = ['id', 'title', 'dream_category', 'dream_image', 'cost', 'status']
