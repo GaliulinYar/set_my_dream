@@ -1,8 +1,8 @@
 from rest_framework import generics
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from .models import DreamCategory, Dream
-from .serializers import DreamCategorySerializer, DreamSerializer
+from dream.models import DreamCategory, Dream
+from dream.serializers import DreamCategorySerializer, DreamSerializer
 
 
 class DreamCategoryCreateAPIView(generics.CreateAPIView):
