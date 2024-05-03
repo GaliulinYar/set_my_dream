@@ -5,7 +5,7 @@ from wallet.models import Wallet, Transaction, CoinPurchase
 class WalletSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wallet
-        fields = ['id', 'user', 'balance']
+        fields = ['id', 'user', 'balance', 'coins']
         read_only_fields = ['user']
 
 

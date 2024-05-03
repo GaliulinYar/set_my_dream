@@ -4,12 +4,14 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class DreamCategory(models.Model):
+    """Модель категории мечты"""
     title = models.CharField(max_length=200, verbose_name='dream category')
     description = models.TextField(verbose_name='dream category description', **NULLABLE)
     image = models.ImageField(upload_to='dream_image', verbose_name='dream category image', **NULLABLE)
 
 
 class Dream(models.Model):
+    """Модель мечты"""
     title = models.CharField(max_length=200, verbose_name='dream')
     dream_category = models.ForeignKey(DreamCategory, on_delete=models.CASCADE, verbose_name='dream category')
     dream_image = models.ImageField(upload_to='dream_image', verbose_name='dream image', **NULLABLE)
