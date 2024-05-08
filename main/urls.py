@@ -20,6 +20,8 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from main.streaming_mp3 import stream_audio
+
 schema_view = get_schema_view(
    openapi.Info(
       title="Snippets API",
@@ -35,11 +37,14 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('users.urls', namespace='users')),
-    path('dream/', include('dream.urls', namespace='dream')),
-    path('wallet/', include('wallet.urls', namespace='wallet')),
+    path('', include('users.urls', namespace='users')),  # инклуд на юзерс урлы
+    path('dream/', include('dream.urls', namespace='dream')),  # инклуд на мечты
+    path('wallet/', include('wallet.urls', namespace='wallet')),  # инклуд на урлы кошелька
+    path('partner/', include('partner.urls', namespace='partner')),  # инклуд на урлы партнеркы-рефралки
 
     # страницы swagger документация
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
+    path('stream_audio/', stream_audio, name='stream_audio'),  # подгрузка аудио
 ]
