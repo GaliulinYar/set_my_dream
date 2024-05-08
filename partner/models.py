@@ -9,7 +9,7 @@ class Referral(models.Model):
     referral_link = models.UUIDField(default=uuid.uuid4, editable=False,
                                      unique=True)  # UUID будет генерировать уникальную ссылку
     referral_reward = models.DecimalField(max_digits=5, decimal_places=2,
-                                          default=0.10)  # Хранит вознаграждение в процентах (10%)
+                                          default=0.50)  # Хранит вознаграждение в процентах (10%)
     referral_count = models.IntegerField(default=0)  # кол-во приглашенных по ссылке
 
     def __str__(self):
